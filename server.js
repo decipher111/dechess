@@ -1,21 +1,11 @@
 const express = require('express')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const path = require('path')
 const app = express()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
-
-const port = 8001
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, '/src')))
-app.use('*', (req, res, next) => {
-	// Logger
-	let time = new Date()
-	console.log(`${req.method} to ${req.originalUrl} at ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`)
-	next()
-})
+const port = 8001
 
 let game = {
     contractAddress: '',
