@@ -53,6 +53,7 @@ function setListeners() {
         })
     })
     document.querySelector('.finish').addEventListener('click', finishGame)
+    game()
 }
 
 function finishGame() {

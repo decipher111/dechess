@@ -1,22 +1,10 @@
 pragma solidity 0.4.25;
 
-contract Dice {
+contract Chess {
     address public player1;
     address public player2;
     uint256 public player1Escrow;
     uint256 public player2Escrow;
-
-    uint256 public player1Balance;
-    uint256 public player2Balance;
-    bool public isPlayer1BalanceSetUp;
-    bool public isPlayer2BalanceSetUp;
-    uint256 public player1FinalBalance;
-    uint256 public player2FinalBalance;
-    uint256 public player1Bet;
-    uint256 public player2Bet;
-    uint256 public player1Call;
-    uint256 public player2Call;
-
 
     constructor () public payable {
         require(msg.value > 0);

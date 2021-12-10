@@ -20,7 +20,7 @@ const port = argv.port
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, '/main/src')))
+app.use(express.static(path.join(__dirname, '/src')))
 app.use('*', (req, res, next) => {
 	// Logger
 	let time = new Date()
